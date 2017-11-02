@@ -1,2 +1,2 @@
 # AI-FirstSemester
-All assignments and lecture work are included in this repository.
+Repository for all assignments and lecture work.
