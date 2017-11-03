@@ -1,0 +1,15 @@
+
+#Used for reading the files only
+
+Dogs
+Cats
+Dogs
+Doggies
+Catts
+Kittens
+Puppies
+Dogs
+Dogs
+Cats
+Kittens
+Dogs
