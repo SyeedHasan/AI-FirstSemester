@@ -1,0 +1,27 @@
+
+#To avoid repitition of code,
+#We create another 'customized button' class
+#like
+
+<MyButton@Button>:
+	color: .8, .9, 0, 1
+	font_size: 32
+	size: 100,50
+
+# ^ This code can be placed in the MyWidget 
+#definition as well
+
+#Root refers to the top of the heirarchy
+
+
+<MyWidget>:
+	MyButton:
+		text: 'Hello'
+		#pos: 0,100
+		pos: root.x, root.top - self.height
+
+
+	MyButton:
+		text: 'World'
+		#pos: 100,0
+		pos: root.right - self.width, root.y
