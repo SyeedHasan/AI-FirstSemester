@@ -6,22 +6,7 @@
 # modify the passed in list.
 def remove_adjacent(nums):
   # Code below,
-
-  nums.sort() #Although sorted arrays are given but just in case,
-
-  listLen = int(len(nums))
-  count = 0
-  newList = []
-
-  while nums:
-
-    if (count+1) and nums[count+1]!= nums[count]:
-        newList.append(nums[count])
-        nums.remove(nums[count])
-    else:
-        del nums[count]
-
-  return nums
+  
 
 # E. Given two lists sorted in increasing order, create and return a merged
 # list of all the elements in sorted order. You may modify the passed in lists.

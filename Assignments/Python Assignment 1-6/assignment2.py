@@ -45,25 +45,38 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     #Code below,
-    lenA = len(a)
-    lenB = len(b)
+    # lenA = len(a)
+    # lenB = len(b)
 
-    if lenA%2 == 0:
-        frontA = a[: int(len(a)/2)]
-        backA = a[int(len(a)/2):]
-    else:
-        frontA = a[:int(len(a)/2)+1]
-        backA = a[int(len(a)/2)+1:]
+    # if lenA%2 == 0:
+    #     frontA = a[: int(len(a)/2)]
+    #     backA = a[int(len(a)/2):]
+    # else:
+    #     frontA = a[:int(len(a)/2)+1]
+    #     backA = a[int(len(a)/2)+1:]
 
-    if lenB%2 == 0:
-        frontB = b[: int(len(b)/2)]
-        backB = b[int(len(b)/2):]
-    else:
-        frontB = b[:int(len(b)/2)+1]
-        backB = b[int(len(b)/2)+1:]
+    # if lenB%2 == 0:
+    #     frontB = b[: int(len(b)/2)]
+    #     backB = b[int(len(b)/2):]
+    # else:
+    #     frontB = b[:int(len(b)/2)+1]
+    #     backB = b[int(len(b)/2)+1:]
 
 
-    newString = frontA + frontB + backA + backB
+    # newString = frontA + frontB + backA + backB
+
+    # return newString
+
+    #Alternate solution
+    aHalf = int(len(a)/2)
+    if len(a)%2 == 1:
+      aHalf+=1
+
+    bHalf = int(len(b)/2)
+    if len(b)%2 == 1:
+      bHalf+=1
+
+    newString = a[:aHalf]+b[:bHalf]+a[aHalf:]+b[bHalf:]
 
     return newString
 

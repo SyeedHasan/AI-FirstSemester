@@ -42,6 +42,7 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # Code below,
+  #newString = s
   if len(s)>2:
   	newString = s[0:2]+s[-2:]
   else:
@@ -79,13 +80,15 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
+  # Alternate solution
+  concatenatedString = b[0:2]+a[2:] + " " + a[0:2]+b[2:]
   # Code below,
   
-  tempVar = a[0:2]
-  a = a.replace(a[0:2], b[0:2])
-  b = b.replace(b[0:2], tempVar)
+  # tempVar = a[0:2]
+  # a = a.replace(a[0:2], b[0:2])
+  # b = b.replace(b[0:2], tempVar)
 
-  concatenatedString = a + " " + b;
+  # concatenatedString = a + " " + b;
   return concatenatedString
 
 
@@ -128,6 +131,7 @@ def main():
   test(mix_up('gnash', 'sport'), 'spash gnort')
   test(mix_up('pezzy', 'firm'), 'fizzy perm')
 
+  input()
 
 # Standard boilerplate to call the main() function.
 if __name__ == '__main__':
