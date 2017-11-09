@@ -1,13 +1,8 @@
-'''
-My Notes:
-str.lower as key for sorting with lowercase
-Use a dictionary to store a word and its respective occurence count
+import sys
+from operator import itemgetter
 
-
-
-'''
-
-"""Wordcount exercise
+"""
+Wordcount exercise
 Python class
 
 The main() below is already defined and complete. It calls print_words()
@@ -22,7 +17,26 @@ word2 count2
 Print the above list in order sorted by word (python will sort punctuation to
 come before letters -- that's fine). Store all the words as lowercase,
 so 'The' and 'the' count as the same word.
+"""
 
+def printWords(wordDict):
+  print("Display Mode: Word -- Count".rjust(35))
+
+  sortedDict = sorted(wordDict.items(), key=itemgetter(0))
+  # Returns a list of tuples (key, value) pair
+
+  # Reconverted to a dict for ease in printing
+  sortedDict = dict(sortedDict)
+
+  totalWordCount = 0
+
+  for key,value in sortedDict.items():
+    totalWordCount += value
+    print(str(key).rjust(20) + " -- " + str(value))
+
+  print("Total Word Count = " + str(totalWordCount))
+
+"""
 2. For the --topcount flag, implement a print_top(filename) which is similar
 to print_words() but which prints just the top 20 most common words sorted
 so the most common word is first, then the next most common, and so on.
@@ -38,7 +52,48 @@ print_words() and print_top().
 
 """
 
-import sys
+def printTop(wordDict):
+  print("Display Mode: Word -- Count".rjust(35))
+
+  sortedDict = sorted(wordDict.items(), key=itemgetter(1), reverse=True)
+  # Returns a list of tuples (key, value) pair
+
+  # Reconverted to a dict for ease in printing
+  sortedDict = dict(sortedDict)
+
+  totalCount = 0
+
+  for key,value in sortedDict.items():
+    if totalCount != 20:
+      print(str(key).rjust(20) + " -- " + str(value))
+      totalCount += 1
+    else:
+      break
+
+
+"""
+#File reader
+
+"""
+
+def fileReader(userfile):
+  userDict = {}
+  with open(userfile) as fileObject:
+    for line in fileObject:
+      wordList = line.split(" ")
+      count = 0
+      for word in wordList:
+        word = word.lower().rstrip()
+
+        if not word.isalpha():
+          continue
+
+        if not word in userDict:
+          userDict[word] = 1
+        else:
+          userDict[word] += 1
+
+    return userDict
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
@@ -52,17 +107,20 @@ import sys
 # calls the print_words() and print_top() functions which you must define.
 def main():
   if len(sys.argv) != 3:
-    print 'usage: ./wordcount.py {--count | --topcount} file'
+    print ('usage: ./wordcount.py {--count | --topcount} file')
     sys.exit(1)
 
   option = sys.argv[1]
   filename = sys.argv[2]
+
+  returnedDict = fileReader(filename)
+
   if option == '--count':
-    print_words(filename)
+    printWords(returnedDict)
   elif option == '--topcount':
-    print_top(filename)
+    printTop(returnedDict)
   else:
-    print 'unknown option: ' + option
+    print ('unknown option: ' + option)
     sys.exit(1)
 
 if __name__ == '__main__':

@@ -5,8 +5,20 @@
 # so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or
 # modify the passed in list.
 def remove_adjacent(nums):
-  # Code below,
-  
+    lenNums = len(nums)
+    newList = []
+
+    for N in range(0, lenNums):
+        try:
+            if nums[N+1] == nums[N]:
+                pass
+            else:
+                newList.append(nums[N])
+
+        except IndexError:
+            newList.append(nums[-1])
+
+    return newList
 
 # E. Given two lists sorted in increasing order, create and return a merged
 # list of all the elements in sorted order. You may modify the passed in lists.
@@ -60,20 +72,22 @@ def test(got, expected):
 
 # Calls the above functions with interesting inputs.
 def main():
-  print ('remove_adjacent')
-  test(remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
+  print ('remove_adjacent', end="\n\n")
+  test(remove_adjacent([1, 1, 1, 2, 2, 2, 3, 5, 5]), [1, 2, 3, 5])
   test(remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
   test(remove_adjacent([]), [])
+  print()
 
-  # print ('linear_merge')
-  # test(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
-  #      ['aa', 'bb', 'cc', 'xx', 'zz'])
-  # test(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']),
-  #      ['aa', 'bb', 'cc', 'xx', 'zz'])
-  # test(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
-  #      ['aa', 'aa', 'aa', 'bb', 'bb'])
-  # test(linear_merge([1, 45, 54, 202], [2, 111, 121, 2213]),
-  #      [1, 2, 45, 54, 111, 121, 202, 2213])
+  print ('linear_merge', end="\n\n")
+  test(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
+       ['aa', 'bb', 'cc', 'xx', 'zz'])
+  test(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']),
+       ['aa', 'bb', 'cc', 'xx', 'zz'])
+  test(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
+       ['aa', 'aa', 'aa', 'bb', 'bb'])
+  test(linear_merge([1, 45, 54, 202], [2, 111, 121, 2213]),
+       [1, 2, 45, 54, 111, 121, 202, 2213])
+  print()
 
 
 if __name__ == '__main__':
