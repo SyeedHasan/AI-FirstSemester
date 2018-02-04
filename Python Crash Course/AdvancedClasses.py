@@ -4,8 +4,8 @@
 from Restaurant import Restaurant
 from Restaurant import IceCreamStand
 
-# icecreamStand = IceCreamStand("Jamailo", "Ice-cream", ['Chocolate', 'Pineapple'])
-# icecreamStand.displayFlavors()
+icecreamStand = IceCreamStand("Jamailo", "Ice-cream", ['Chocolate', 'Pineapple'])
+icecreamStand.displayFlavors()
 
 
 #9-11 also uses 9-7 and 9-8
@@ -44,8 +44,8 @@ glossary['conditional test'] = 'A comparison between two values.'
 glossary['float'] = 'A numerical value with a decimal component.'
 glossary['boolean expression'] = 'An expression that evaluates to True or False.'
 
-for word, definition in glossary.items():
-    print("\n" + word.title() + ": " + definition)
+# for word, definition in glossary.items():
+#     print("\n" + word.title() + ": " + definition)
 
 
 
@@ -66,20 +66,20 @@ class Die():
         print("The current number on the die is: " + str(num))
 
 
-print("\nRolling the 6 sides Die... ")
-six_side_die = Die()
-for i in range(10):
-    six_side_die.roll_die()
+# print("\nRolling the 6 sides Die... ")
+# six_side_die = Die()
+# for i in range(10):
+#     six_side_die.roll_die()
 
-print("\nRolling the 10 sides Die... ")
-ten_side_die = Die(10)
-for i in range(10):
-    ten_side_die.roll_die()
+# print("\nRolling the 10 sides Die... ")
+# ten_side_die = Die(10)
+# for i in range(10):
+#     ten_side_die.roll_die()
 
-print("\nRolling the 20 sides Die... ")
-twenty_side_die = Die(20)
-for i in range(10):
-    twenty_side_die.roll_die()
+# print("\nRolling the 20 sides Die... ")
+# twenty_side_die = Die(20)
+# for i in range(10):
+#     twenty_side_die.roll_die()
 
 
 #9-9
