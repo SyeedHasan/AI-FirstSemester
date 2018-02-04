@@ -87,28 +87,31 @@ def test(got, expected):
 # Calls the above functions with interesting inputs.
 def main():
 
-  # print ('match_ends')
-  # test(match_ends(['aba', 'xyz', 'aa', 'x', 'bbb']), "3")
-  # test(match_ends(['', 'x', 'xy', 'xyx', 'xx']), "2")
-  # test(match_ends(['aaa', 'be', 'abc', 'hello']), "1")
+  print ('match_ends')
+  test(match_ends(['aba', 'xyz', 'aa', 'x', 'bbb']), "3")
+  test(match_ends(['', 'x', 'xy', 'xyx', 'xx']), "2")
+  test(match_ends(['aaa', 'be', 'abc', 'hello']), "1")
 
-  # print ('front_x')
-  # #Removed test for these,
-  # front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa'])
-  # print("Expected Output: " , ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
-  # front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa'])
-  # print("Expected Output: " , ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
-  # front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
-  # print("Expected Output: " , ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
-
+  print ('front_x')
+  print()
+  #Removed test for these,
+  front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa'])
+  print("Expected Output: " , ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
+  print()
+  front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa'])
+  print("Expected Output: " , ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
+  print()
+  front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
+  print("Expected Output: " , ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
+  print()
        
-   print ('sort_last')
-   sort_last([(1, 3), (3, 2), (2, 1)])
-   #[(2, 1), (3, 2), (1, 3)])
-   sort_last([(2, 3), (1, 2), (3, 1)]),
-  #      [(3, 1), (1, 2), (2, 3)])
-   sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)]),
-  #      [(2, 2), (1, 3), (3, 4, 5), (1, 7)])
+  print ('sort_last')
+  sort_last([(1, 3), (3, 2), (2, 1)])
+  print("Expected Output : " , [(2, 1), (3, 2), (1, 3)])
+  sort_last([(2, 3), (1, 2), (3, 1)]),
+  print("Expected Output : " ,[(3, 1), (1, 2), (2, 3)])
+  sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)]),
+  print("Expected Output : " ,[(2, 2), (1, 3), (3, 4, 5), (1, 7)])
 
 
 if __name__ == '__main__':

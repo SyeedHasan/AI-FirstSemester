@@ -43,7 +43,8 @@ def items(*allItems):
     for item in allItems:
         print("\t-" + item)
         
-#items('Pepper', 'Salt', 'Tomato')
+# items('Pepper', 'Salt', 'Tomato')
+# items('Pepper', 'Salt', 'Tomato', 'Pineapple', 'Jalapeno', 'Mustard', 'Mayo', 'Ketchup')
 
 #8-13
         
@@ -67,16 +68,27 @@ user_profile = build_profile('Syed', 'Hasan',
 
 #8-14
 
-def storeCar(manufacturer, modelNum, **otherStuff):
+def storeCar(model, modelNum, **otherStuff):
+    other = {}
+    other['model'] = model  
+    other['Model Number'] = modelNum
+    for key,value in otherStuff.items():
+        other[key]=value
     
-    otherStuff['Manufacturer'] = manufacturer
-    otherStuff['Model Number'] = modelNum
-    
-    return otherStuff
+    return other
     
     
-myCar = storeCar('Subaru', 'Outback', color='Black', plate='AB21C', towNum='223B', seats='5')
+# myCar = storeCar('Subaru', 'Outback', color='Black', plate='AB21C', towNum='223B', seats='5')
 
-print(myCar)    
-    
+# print(myCar)    
+#     
 
+# 8-16
+
+# import module1
+# from module1 import display
+# from module1 import *
+import module1 as m1
+# from module1 import display as d
+m1.display("Hasan");
+# display("Hasan");
