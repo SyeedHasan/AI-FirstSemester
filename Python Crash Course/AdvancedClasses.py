@@ -18,16 +18,75 @@ userAdmin.priviliges.showPriviliges()
 
 #9-12 nahi kiya
 
+#9-13
+# Now that you know how to loop through a dictionary, clean
+# up the code from Exercise 6-3 (page 102) by replacing your
+# series of print
+# statements with a loop that runs through the 
+#dictionary’s keys and values.
+# When you’re sure that your loop works, add
+# five more Python terms to your
+# glossary. When you run your program again, 
+#these new words and meanings
+# should automatically be included in the output.
+from collections import OrderedDict
+
+glossary = OrderedDict()
+
+glossary['string'] = 'A series of characters.'
+glossary['comment'] = 'A note in a program that the Python interpreter ignores.'
+glossary['list'] = 'A collection of items in a particular order.'
+glossary['loop'] = 'Work through a collection of items, one at a time.'
+glossary['dictionary'] = "A collection of key-value pairs."
+glossary['key'] = 'The first item in a key-value pair in a dictionary.'
+glossary['value'] = 'An item associated with a key in a dictionary.'
+glossary['conditional test'] = 'A comparison between two values.'
+glossary['float'] = 'A numerical value with a decimal component.'
+glossary['boolean expression'] = 'An expression that evaluates to True or False.'
+
+for word, definition in glossary.items():
+    print("\n" + word.title() + ": " + definition)
+
+
+
+#9-14
+
+from random import randint
+
+class Die():
+    """Trying to model real-world dice with 6 sides."""
+
+    def __init__(self, sides=6):
+        """Initialize attributes of the class Die."""
+        self.sides = sides
+
+    def roll_die(self):
+        """Modeling rolling of the die."""
+        num = randint(1, self.sides)
+        print("The current number on the die is: " + str(num))
+
+
+print("\nRolling the 6 sides Die... ")
+six_side_die = Die()
+for i in range(10):
+    six_side_die.roll_die()
+
+print("\nRolling the 10 sides Die... ")
+ten_side_die = Die(10)
+for i in range(10):
+    ten_side_die.roll_die()
+
+print("\nRolling the 20 sides Die... ")
+twenty_side_die = Die(20)
+for i in range(10):
+    twenty_side_die.roll_die()
+
+
 #9-9
 #BELOW THE MAIN CODE
 
 
 # M A I N M E T H O D
-
-
-"""A set of classes that can be used to represent electric cars."""
-
-"""A class that can be used to represent a car."""
 
 class Car():
     """A simple attempt to represent a car."""
@@ -62,7 +121,6 @@ class Car():
         """Add the given amount to the odometer reading."""
         self.odometer_reading += miles
 
-
 class Battery():
     """A simple attempt to model a battery for an electric car."""
 
@@ -87,8 +145,7 @@ class Battery():
 
     def upgrade_battery(self):
     	if self.battery_size is not 85:
-    		self.battery_size = 85  	
-    
+    		self.battery_size = 85  	  
         
 class ElectricCar(Car):
     """Models aspects of a car, specific to electric vehicles."""
